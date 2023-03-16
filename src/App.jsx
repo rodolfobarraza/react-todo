@@ -23,7 +23,9 @@ const App = () => {
 
       </main>
 
-      <footer className="container text-center mt-8 mx-auto px-4">Drag and drop to reorder list</footer>
+      <footer className="container text-center mt-8 mx-auto px-4">
+        Drag and drop to reorder list
+      </footer>
     </div>
   )
 }
