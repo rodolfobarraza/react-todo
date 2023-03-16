@@ -14,25 +14,27 @@ const App = () => {
       </header>
 
       <main className="container mx-auto px-4 mt-8">
-        <article>
-          <button>circulo</button>
-          <p>Completar curso JavaScript  en línea</p>
-          <button>times</button>
-        </article>
-        <article>
-          <button>circulo</button>
-          <p>Completar curso JavaScript  en línea</p>
-          <button>times</button>
-        </article>
-        <article>
-          <button>circulo</button>
-          <p>Completar curso JavaScript  en línea</p>
-          <button>times</button>
-        </article>
-        <section>
-          <span>5 item left</span>
-          <button>Clear completed</button>
-        </section>
+        <div className="bg-white rounded-md inline-block w-full px-4">
+          <article>
+            <button className="inline-block h-5 w-5 rounded-full border-2"></button>
+            <p className="text-gray-600">Completar curso JavaScript  en línea</p>
+            <button>times</button>
+          </article>
+          <article>
+            <button>circulo</button>
+            <p>Completar curso JavaScript  en línea</p>
+            <button>times</button>
+          </article>
+          <article>
+            <button>circulo</button>
+            <p>Completar curso JavaScript  en línea</p>
+            <button>times</button>
+          </article>
+          <section>
+            <span>5 item left</span>
+            <button>Clear completed</button>
+          </section>
+        </div>
       </main>
 
       <section>
