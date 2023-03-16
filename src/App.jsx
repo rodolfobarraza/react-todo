@@ -21,9 +21,17 @@ const App = () => {
       id: Date.now(),
       title: title.trim(),
       completed: false,
-    }
+    };
 
     setTodos([...todos, newTodo]);
+  };
+
+  const updateTodo = (id) => {
+    setTodos(todos.map(todo => todo.id === id ? {...todo, completed: !todo.completed} : todo));
+  }
+
+  const removeTodo = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
   }
 
   return (
@@ -36,7 +44,7 @@ const App = () => {
         <TodoCreate createTodo={createTodo}/>
 
         {/** TodoList (TodoItem) TodoUpdate & TodoDelete */}
-        <TodoList todos={todos}/>
+        <TodoList todos={todos} updateTodo={updateTodo} removeTodo={removeTodo}/>
 
         <TodoCompute/>
 
