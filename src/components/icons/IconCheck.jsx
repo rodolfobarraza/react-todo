@@ -1,10 +1,9 @@
-const IconCheck = ({ fill = "#FFF", stroke = "#FFF", ...props }) => { 
+const IconCheck = ({ stroke = "#FFF", ...props }) => { 
     return (
         <svg 
             xmlns="http://www.w3.org/2000/svg"
             width="11"
             height="9"
-            fill={fill}
             stroke={stroke}
             strokeWidth="2"
             {...props}
