@@ -42,13 +42,15 @@ const App = () => {
         </div>
       </main>
 
-      <section>
-        <button className="container mx-auto px-4">All</button>
-        <button>Active</button>
-        <button>Completed</button>
+      <section className="container mx-auto px-4 mt-8">
+        <div className="flex justify-center bg-white px-4 rounded-md gap-4">
+          <button className="hover:text-blue-700">All</button>
+          <button className="hover:text-blue-700">Active</button>
+          <button className="hover:text-blue-700">Completed</button>
+        </div>
       </section>
 
-      <section>Drag and drop to reorder list</section>
+      <section className="text-center mt-8">Drag and drop to reorder list</section>
 
       <footer className="container mx-auto px-4"></footer>
     </div>
