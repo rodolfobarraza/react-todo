@@ -16,6 +16,16 @@ const App = () => {
 
   const [todos, setTodos] = useState(initialStateTodos);
 
+  const createTodo = (title) => {
+    const newTodo = {
+      id: Date.now(),
+      title: title.trim(),
+      completed: false,
+    }
+
+    setTodos([...todos, newTodo]);
+  }
+
   return (
     <div className="bg-[url('./assets/images/bg-mobile-light.jpg')] bg-contain bg-no-repeat bg-gray-300 min-h-screen">
 
@@ -23,7 +33,7 @@ const App = () => {
 
       <main className="container mx-auto px-4">
 
-        <TodoCreate/>
+        <TodoCreate createTodo={createTodo}/>
 
         {/** TodoList (TodoItem) TodoUpdate & TodoDelete */}
         <TodoList todos={todos}/>
