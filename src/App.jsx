@@ -40,6 +40,23 @@ const App = () => {
     setTodos(todos.filter((todo) => !todo.completed));
   }
 
+  const [filter, setFilter] = useState("all");
+
+  const changeFilter = (filter) => setFilter(filter);
+
+  const filteredTodos = () => {
+    switch (filter) {
+      case "all":
+        return todos;
+      case "active":
+        return todos.filter((todo) => !todo.completed);
+      case "completed":
+        return todos.filter((todo) => todo.completed);
+      default:
+        return todos;
+    }
+  }
+
   return (
     <div className="bg-[url('./assets/images/bg-mobile-light.jpg')] bg-contain bg-no-repeat bg-gray-300 min-h-screen">
 
@@ -47,14 +64,23 @@ const App = () => {
 
       <main className="container mx-auto px-4">
 
-        <TodoCreate createTodo={createTodo}/>
+        <TodoCreate 
+          createTodo={createTodo}
+        />
 
         {/** TodoList (TodoItem) TodoUpdate & TodoDelete */}
-        <TodoList todos={todos} updateTodo={updateTodo} removeTodo={removeTodo}/>
+        <TodoList 
+          todos={filteredTodos()} 
+          updateTodo={updateTodo} 
+          removeTodo={removeTodo}
+        />
 
         <TodoCompute computedItemsLeft={computedItemsLeft} clearCompleted={clearCompleted}/>
 
-        <TodoFilter/>
+        <TodoFilter 
+          changeFilter={changeFilter} 
+          filter={filter}
+        />
 
       </main>
 
