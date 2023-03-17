@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import IconMoon from "./icons/IconMoon";
 import IconSun from "./icons/IconSun";
 
@@ -6,7 +6,13 @@ const Header = () => {
 
   const [darkMode, setDarkMode] = useState(false);
 
-  const handleClickToggleTheme = () => {}
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [darkMode]);
 
   return (
     <header className="container mx-auto px-4 pt-8">
