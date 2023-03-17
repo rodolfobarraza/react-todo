@@ -16,11 +16,14 @@ const TodoCreate = ({createTodo}) => {
   }
 
   return (
-    <form onSubmit={handleSubmitAddTodo} className="flex items-center gap-4 rounded-md overflow-hidden py-3 px-4 bg-white mt-8">
+    <form 
+      onSubmit={handleSubmitAddTodo} 
+      className="dark:bg-gray-800 flex items-center gap-4 rounded-md overflow-hidden py-3 px-4 bg-white mt-8"
+    >
       <span className="inline-block h-5 w-5 rounded-full border-2"></span>
       <input 
         type="text"
-        className="w-full text-gray-400 outline-none" 
+        className="dark:bg-gray-800 w-full text-gray-400 outline-none" 
         placeholder="Nombre Nueva Tarea"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
